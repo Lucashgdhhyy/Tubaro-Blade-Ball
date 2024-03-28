@@ -12,10 +12,10 @@ Tab:AddButton({
       		print("button pressed")    getgenv().config = getgenv().config or {
 	hit_time = 0.7, -- // recommended 0.25 to 0.75 \\ --
 	
-	mode = 'Toggle', -- // Hold , Toggle , Always \\ --
+	mode = 'Always', -- // Hold , Toggle , Always \\ --
 	deflect_type = 'Remote', -- // Key Press , Remote \\ --
 	notifications = true,
-	keybind = Enum.KeyCode.E
+	keybind = Enum.KeyCode.v
 }
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
