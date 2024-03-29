@@ -1,42 +1,86 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Tubaro Hub|Blade Ball", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+ocal OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() --This Will Load The Script Code
+local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
+  local Window = OrionLib:MakeWindow({
+		Name = "Tubaro Hub Key System",
+		HidePremium = false,
+		SaveConfig = true,
+		ConfigFolder = "OrionTest",
+        IntroText = "Loading Script..."       
+}) --This Will Load The Script Hub
+
+function MakeScriptHub()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))() --Put The Script That Will Load If The Key Is Correct Here
+end
+
+OrionLib:MakeNotification({
+	Name = "Logado!",
+	Content = "Você Precisa da key "..Player.Name..".",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+}) --Notification
+
+getgenv().Key = "Tubaro142" --Put The Correct Key Here
+getgenv().KeyInput = "string" --Require For The Key To Work
+
 local Tab = Window:MakeTab({
-	Name = "Combat",
+	Name = "Key",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
-})
+}) --Making A Tab
+
+Tab:AddTextbox({
+	Name = "Key",
+	Default = "Enter Key.",
+	TextDisappear = true,
+	Callback = function(Value)
+		getgenv().KeyInput = Value
+	end	  
+}) --You Will Enter The Key Here
 
 Tab:AddButton({
-	Name = "Auto Parry",
-	Callback = function()
-      		print("button pressed")       getgenv().config = getgenv().config or {
-    hit_time = 0.7, -- // recommended 0.25 to 0.75 \ --
- 
-    mode = 'Always', -- // Hold , Toggle , Always \ --
-    deflect_type = 'Remote', -- // Key Press , Remote \ --
-    notifications = true,
-    keybind = Enum.KeyCode.V
-}
- 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Parry%20V4.0.0",true))()
-  	end    
-})
-
+    Name = "Check Key",
+    Callback = function()
+        if getgenv().KeyInput == getgenv().Key then
+            OrionLib:MakeNotification({
+                Name = "Checando key",
+                Content = "Checando key que você colocou",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Correct Key!",
+                Content = "Key certa boa.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(1)
+            OrionLib:Destroy()
+            wait(.3)
+            MakeScriptHub()
+        else
+           OrionLib:MakeNotification({
+                Name = "Checking Key",
+                Content = "Checking The Key You Entered",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Incorrect Key!",
+                Content = "The key you entered is incorrect.",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+}) --This Will Check The Key You Entered
 
 Tab:AddButton({
-	Name = "Auto Spam",
+	Name = "Copy Key",
 	Callback = function()
-      		print("button pressed")                                    loadstring(game:HttpGet("https://pastebin.com/raw/t2391h1A"))()
+      		setclipboard("Put The Link Here") --This Will Copy The Link Of The Key
   	end    
-})
-
-
-Tab:AddButton({
-	Name = "Hold Block for spam",
-	Callback = function()
-      		print("button pressed")           getgenv().SpamSpeed = 1
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3ABlade%20Ball%20Spam",true))()
-  	end    
-})
-
-OrionLib:Init()
+}) 
+    
+OrionLib:Init() --Require If The Script Is Done
