@@ -1,7 +1,7 @@
-ocal OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() --This Will Load The Script Code
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() --This Will Load The Script Code
 local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
   local Window = OrionLib:MakeWindow({
-		Name = "Tubaro Hub Key System",
+		Name = "Hub Key System",
 		HidePremium = false,
 		SaveConfig = true,
 		ConfigFolder = "OrionTest",
@@ -9,12 +9,12 @@ local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
 }) --This Will Load The Script Hub
 
 function MakeScriptHub()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucashgdhhyy/Tubaro-Bypass/main/README.md"))()          --Put The Script That Will Load If The Key Is Correct Here
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucashgdhhyy/Tubaro-Bypass/main/README.md"))()     --Put The Script That Will Load If The Key Is Correct Here
 end
 
 OrionLib:MakeNotification({
-	Name = "Logado!",
-	Content = "Você Precisa da key "..Player.Name..".",
+	Name = "Logged In!",
+	Content = "You need key "..Player.Name..".",
 	Image = "rbxassetid://4483345998",
 	Time = 5
 }) --Notification
@@ -42,15 +42,15 @@ Tab:AddButton({
     Callback = function()
         if getgenv().KeyInput == getgenv().Key then
             OrionLib:MakeNotification({
-                Name = "Checando key",
-                Content = "Checando key que você colocou",
+                Name = "Checking Key",
+                Content = "Checking The Key You Entered",
                 Image = "rbxassetid://4483345998",
                 Time = 5
             })
             wait(2)
             OrionLib:MakeNotification({
                 Name = "Correct Key!",
-                Content = "Key certa boa.",
+                Content = "The key you entered is Correct.",
                 Image = "rbxassetid://4483345998",
                 Time = 5
             })
@@ -79,7 +79,7 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Copy Key",
 	Callback = function()
-      		setclipboard("https://tubaroscripts.blogspot.com/2024/03/blog-post.html") --This Will Copy The Link Of The Key
+      		setclipboard("Put The Link Here") --This Will Copy The Link Of The Key
   	end    
 }) 
     
