@@ -9,7 +9,7 @@ local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
 }) --This Will Load The Script Hub
 
 function MakeScriptHub()
-         loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))() --Put The Script That Will Load If The Key Is Correct Here
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucashgdhhyy/Tubaro-Bypass/main/README.md"))()          --Put The Script That Will Load If The Key Is Correct Here
 end
 
 OrionLib:MakeNotification({
@@ -79,7 +79,7 @@ Tab:AddButton({
 Tab:AddButton({
 	Name = "Copy Key",
 	Callback = function()
-      		setclipboard("Put The Link Here") --This Will Copy The Link Of The Key
+      		setclipboard("https://tubaroscripts.blogspot.com/2024/03/blog-post.html") --This Will Copy The Link Of The Key
   	end    
 }) 
     
